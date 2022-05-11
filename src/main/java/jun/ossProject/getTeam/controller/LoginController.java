@@ -23,7 +23,7 @@ public class LoginController {
     @PostMapping({"/kakao"})
     public User userAdd(@RequestBody  User user) throws SQLException {
         // 회원이 아닌 경우 DB에 회원정보 추가
-        if(userRepository.selectUser(user.getId())==0)
+        if(!userRepository.isUserPresent(user.getId()))
             userRepository.insertUser(user.getId(), user.getNickname());
         return user;
     }

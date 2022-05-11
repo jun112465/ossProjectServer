@@ -9,44 +9,32 @@ import java.sql.*;
 @Repository
 public class UserRepository {
     DataSource dataSource;
+    Connection con;
+    PreparedStatement pstmt;
+    ResultSet rs;
 
     @Autowired
     UserRepository(DataSource dataSource){
         this.dataSource = dataSource;
     }
 
-    public int insertUser(String id, String nickname) throws SQLException {
+    public void insertUser(String id, String nickname) throws SQLException {
         String sql = String.format("INSERT INTO user set id='%s', nickname='%s'", id, nickname);
-        Connection con = dataSource.getConnection();
-        PreparedStatement pstmt = con.prepareStatement(sql);
+        con = dataSource.getConnection();
+        pstmt = con.prepareStatement(sql);
         int rs = pstmt.executeUpdate();
 
         pstmt.close();
         con.close();
-        return rs;
     }
 
-    public int selectUser(String id) throws SQLException {
+    public boolean isUserPresent(String id) throws SQLException {
         String sql = String.format("Select * from user where id='%s'", id);
-        Connection con = dataSource.getConnection();
-        PreparedStatement pstmt = con.prepareStatement(sql);
-        ResultSet rs = pstmt.executeQuery();
+        con = dataSource.getConnection();
+        pstmt = con.prepareStatement(sql);
+        rs = pstmt.executeQuery();
 
         rs.last();
-        System.out.println(rs.getRow());
-        return rs.getRow();
-
-//        rs.next();
-//        if(rs.getString("id")!=null){
-//            rs.close();
-//            pstmt.close();
-//            con.close();
-//            return true;
-//        }else{
-//            rs.close();
-//            pstmt.close();
-//            con.close();
-//            return false;
-//        }
+        return rs.getRow() == 1;
     }
 }

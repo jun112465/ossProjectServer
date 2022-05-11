@@ -38,4 +38,10 @@ public class TeamController {
         // 모든 유저의 팀 목록에서 teamId 삭제
     }
 
+    // 팀원 추가
+    public void addTeamMember(){
+        // 팀원 초대 방식은 메세지 전송을 통해 초대하게됨
+        // 메세지로 팀 초대 문구와 (수락,거절) 버튼 2개 넣어서 보낸다
+    }
+
 }
