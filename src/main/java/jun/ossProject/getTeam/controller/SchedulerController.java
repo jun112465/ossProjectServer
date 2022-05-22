@@ -3,12 +3,34 @@ package jun.ossProject.getTeam.controller;
 import jun.ossProject.getTeam.Entity.Schedule;
 import jun.ossProject.getTeam.Entity.Team;
 import jun.ossProject.getTeam.Entity.User;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+@Controller
+@RequestMapping("/schedule")
 public class SchedulerController {
 
     // 스케줄 목록 가져오기
-    public void getSchedules(Team team){
+    @ResponseBody
+    @GetMapping(value = "/get")
+    public HashMap<String, List<Schedule>> getSchedules(){
         // 팀에 해당하는 모든 스케쥴 가져오기
+
+        HashMap<String, List<Schedule>> item = new HashMap<>();
+        List<Schedule> schedulesList = new ArrayList<>();
+        schedulesList.add(new Schedule(1, "team1", "user1", "content1", "2022-05-18"));
+        schedulesList.add(new Schedule(2, "team2", "user2", "content2", "2022-05-18"));
+        schedulesList.add(new Schedule(4, "team2", "user4", "content4", "2022-05-18"));
+        item.put("2022-05-18", schedulesList);
+
+        return item;
     }
 
     // 스케줄 추가

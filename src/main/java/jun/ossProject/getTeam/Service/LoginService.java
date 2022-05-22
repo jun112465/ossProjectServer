@@ -18,7 +18,7 @@ public class LoginService {
 
     public User addUser(User user) throws SQLException {
         // 회원가입 되있지 경우 추가 x
-        if(userRepository.selectUser(user.getId())==0)
+        if(!userRepository.isUserPresent(user.getId()))
             userRepository.insertUser(user.getId(), user.getNickname());
         return user;
     }

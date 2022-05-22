@@ -1,8 +1,18 @@
 package jun.ossProject.getTeam.Entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
 public class Message {
     int id;
+    String type;
+    String from;
+    String to;
     String content;
-    String sender;
-    String receiver;
+
+    //type = inviteLink 인 경우 아래 값들이 채워져있어야 한다.
+    int teamId;
+    String teamName;
 }

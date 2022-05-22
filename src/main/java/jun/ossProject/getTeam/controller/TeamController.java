@@ -2,11 +2,16 @@ package jun.ossProject.getTeam.controller;
 
 import jun.ossProject.getTeam.Entity.Team;
 import jun.ossProject.getTeam.Entity.User;
+import org.springframework.data.relational.core.sql.In;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
-@Controller("/team")
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+@Controller
+@RequestMapping("/team")
 public class TeamController {
 
     @ResponseBody
@@ -22,12 +27,21 @@ public class TeamController {
     }
 
     @ResponseBody
-    @PostMapping("/get")
-    public void getTeams(User user){
+    @GetMapping(value  = "/get")
+    public List<Team> getTeams(){
         // 유저가 소속돼 있는 팀 목록 호출
 
         // 팀 목록 반환
 
+        HashMap<Integer, String> items = new HashMap<>();
+        items.put(1, "team1");
+        items.put(2, "team2");
+
+        List<Team> teamList = new ArrayList<>();
+        teamList.add(new Team(1, "team1"));
+        teamList.add(new Team(2, "team2"));
+        teamList.add(new Team(3, "team3"));
+        return teamList;
     }
 
     @ResponseBody
