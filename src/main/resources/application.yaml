@@ -2,6 +2,9 @@ spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     url: "jdbc:mariadb://localhost:3306/ossProject?characterEncoding=UTF-8&serverTimezone=UTC"
+#    url: "jdbc:mysql://183.111.227.104:3306/test?useSSL=false&characterEncoding=utf8&serverTimezone=UTC&zeroDateTimeBehavior=convertToNull"
     username: root
+#    username: test
     password: 1q2w3e4r!
-
+#    password: Foodie123!@#
+#    driver-class-name: com.mysql.cj.jdbc.Driver

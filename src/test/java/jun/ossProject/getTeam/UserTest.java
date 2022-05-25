@@ -31,8 +31,8 @@ public class UserTest {
         userRepository.insertUser("testId", "testNickName");
     }
 
-    @Test
-    public void find() throws SQLException{
-        userRepository.selectUser("testId");
-    }
+//    @Test
+//    public void find() throws SQLException{
+//        userRepository.selectUser("testId");
+//    }
 }

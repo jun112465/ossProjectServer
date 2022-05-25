@@ -5,9 +5,11 @@ import jun.ossProject.getTeam.Entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @Controller
@@ -17,14 +19,15 @@ public class MessageController {
     @ResponseBody
     @GetMapping("/get")
     // 모든 메세지 가져오기
-    public List<Message> getMessages(){
+    public HashMap<String, List<Message>> getMessages(@RequestParam (value = "user_id") String user_id){
         // user 가 receiver 인 모든 메세지 가져오기
-
         List<Message> msgList = new ArrayList<>();
         msgList.add(new Message(1, "inviteLink", "user1", "user2", "contentcontent", 1, "team1"));
         msgList.add(new Message(2, "message", "user2", "user4", "contentcontent", 2, "team2"));
 
-        return msgList;
+        HashMap<String, List<Message>> json = new HashMap<>();
+        json.put("msgList", msgList);
+        return json;
     }
 
     // 메세지 전송

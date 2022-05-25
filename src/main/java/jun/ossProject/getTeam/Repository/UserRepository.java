@@ -20,6 +20,7 @@ public class UserRepository {
 
     public void insertUser(String id, String nickname) throws SQLException {
         String sql = String.format("INSERT INTO user set id='%s', nickname='%s'", id, nickname);
+
         con = dataSource.getConnection();
         pstmt = con.prepareStatement(sql);
         int rs = pstmt.executeUpdate();

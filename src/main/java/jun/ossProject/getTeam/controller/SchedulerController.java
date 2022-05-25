@@ -4,10 +4,7 @@ import jun.ossProject.getTeam.Entity.Schedule;
 import jun.ossProject.getTeam.Entity.Team;
 import jun.ossProject.getTeam.Entity.User;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,7 +17,7 @@ public class SchedulerController {
     // 스케줄 목록 가져오기
     @ResponseBody
     @GetMapping(value = "/get")
-    public HashMap<String, List<Schedule>> getSchedules(){
+    public HashMap<String, List<Schedule>> getSchedules(@RequestParam (value = "team_id")String teamId){
         // 팀에 해당하는 모든 스케쥴 가져오기
 
         HashMap<String, List<Schedule>> item = new HashMap<>();

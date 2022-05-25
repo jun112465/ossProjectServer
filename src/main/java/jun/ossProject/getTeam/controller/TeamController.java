@@ -28,7 +28,7 @@ public class TeamController {
 
     @ResponseBody
     @GetMapping(value  = "/get")
-    public List<Team> getTeams(){
+    public HashMap<String, List<Team>> getTeams(@RequestParam(name="user_id") String userId){
         // 유저가 소속돼 있는 팀 목록 호출
 
         // 팀 목록 반환
@@ -41,7 +41,10 @@ public class TeamController {
         teamList.add(new Team(1, "team1"));
         teamList.add(new Team(2, "team2"));
         teamList.add(new Team(3, "team3"));
-        return teamList;
+
+        HashMap<String, List<Team>> json = new HashMap<>();
+        json.put("teamList", teamList);
+        return json;
     }
 
     @ResponseBody
@@ -56,6 +59,17 @@ public class TeamController {
     public void addTeamMember(){
         // 팀원 초대 방식은 메세지 전송을 통해 초대하게됨
         // 메세지로 팀 초대 문구와 (수락,거절) 버튼 2개 넣어서 보낸다
+    }
+
+    @ResponseBody
+    @GetMapping("/get_members")
+    public HashMap<String, List<User>> getTeamMembers(@RequestParam (value="team_id") String team_id){
+        List<User> userList = new ArrayList<>();
+        userList.add(new User("12312", "wefweio"));
+        userList.add(new User("123124", "weoijeoif"));
+        HashMap<String, List<User>> json = new HashMap<>();
+        json.put("userList", userList);
+        return json;
     }
 
 }
