@@ -1,4 +1,4 @@
-package jun.ossProject.getTeam.Entity;
+package jun.ossProject.getTeam.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

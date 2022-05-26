@@ -1,10 +1,7 @@
-package jun.ossProject.getTeam.Entity;
+package jun.ossProject.getTeam.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
-
-import java.util.Date;
 
 @Getter
 @AllArgsConstructor

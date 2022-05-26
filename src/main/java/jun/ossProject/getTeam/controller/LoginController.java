@@ -1,8 +1,8 @@
 package jun.ossProject.getTeam.controller;
 
-import jun.ossProject.getTeam.Entity.User;
-import jun.ossProject.getTeam.Repository.UserRepository;
-import jun.ossProject.getTeam.Service.LoginService;
+import jun.ossProject.getTeam.entity.User;
+import jun.ossProject.getTeam.repository.UserRepository;
+import jun.ossProject.getTeam.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

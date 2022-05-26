@@ -1,4 +1,4 @@
-package jun.ossProject.getTeam.Entity;
+package jun.ossProject.getTeam.entity;
 
 public class Team {
     int teamId;

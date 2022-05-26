@@ -1,8 +1,7 @@
 package jun.ossProject.getTeam.controller;
 
-import jun.ossProject.getTeam.Entity.Team;
-import jun.ossProject.getTeam.Entity.User;
-import org.springframework.data.relational.core.sql.In;
+import jun.ossProject.getTeam.entity.Team;
+import jun.ossProject.getTeam.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 

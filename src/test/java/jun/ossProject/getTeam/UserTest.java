@@ -1,6 +1,6 @@
 package jun.ossProject.getTeam;
 
-import jun.ossProject.getTeam.Repository.UserRepository;
+import jun.ossProject.getTeam.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

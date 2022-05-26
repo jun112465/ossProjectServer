@@ -1,4 +1,4 @@
-package jun.ossProject.getTeam.Repository;
+package jun.ossProject.getTeam.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

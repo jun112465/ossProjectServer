@@ -1,7 +1,5 @@
-package jun.ossProject.getTeam.Entity;
+package jun.ossProject.getTeam.entity;
 
-
-import lombok.extern.log4j.Log4j;
 
 public class User {
     String id;

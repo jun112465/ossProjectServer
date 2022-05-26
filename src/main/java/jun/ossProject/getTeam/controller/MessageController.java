@@ -1,12 +1,10 @@
 package jun.ossProject.getTeam.controller;
 
-import jun.ossProject.getTeam.Entity.Message;
-import jun.ossProject.getTeam.Entity.User;
+import jun.ossProject.getTeam.entity.Message;
+import jun.ossProject.getTeam.entity.User;
+import jun.ossProject.getTeam.vo.MessageVO;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,8 +28,10 @@ public class MessageController {
         return json;
     }
 
+    @ResponseBody
+    @PostMapping("/add")
     // 메세지 전송
-    public void sendMessage(User sender, User receiver){
+    public void sendMessage(@RequestBody MessageVO msgVo){
 
     }
 

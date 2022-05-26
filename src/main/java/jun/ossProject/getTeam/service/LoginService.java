@@ -1,7 +1,7 @@
-package jun.ossProject.getTeam.Service;
+package jun.ossProject.getTeam.service;
 
-import jun.ossProject.getTeam.Entity.User;
-import jun.ossProject.getTeam.Repository.UserRepository;
+import jun.ossProject.getTeam.entity.User;
+import jun.ossProject.getTeam.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
