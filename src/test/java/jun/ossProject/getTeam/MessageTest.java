@@ -23,6 +23,5 @@ public class MessageTest {
         mv.setContent("content ");
         mv.setFromId("1234");
         mv.setToId(("1414"));
-        mr.createMessage(mv);
     }
 }

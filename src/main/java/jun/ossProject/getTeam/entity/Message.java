@@ -13,6 +13,6 @@ public class Message {
     String content;
 
     //type = inviteLink 인 경우 아래 값들이 채워져있어야 한다.
-    int teamId;
+    String teamId;
     String teamName;
 }
